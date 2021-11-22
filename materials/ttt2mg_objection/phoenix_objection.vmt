@@ -1,0 +1,10 @@
+"UnlitGeneric"
+{
+	"$basetexture" "ttt2mg_objection/phoenix_objection"
+	"$nocull" 1
+	"$nodecal" 1
+	"$nolod" 1
+	"$translucent" 1
+	"$vertexalpha" 1
+	"$vertexcolor" 1
+}
