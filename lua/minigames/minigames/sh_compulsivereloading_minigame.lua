@@ -21,10 +21,12 @@ end
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Compulsive Reloading"
+      en = "Compulsive Reloading",
+      de = "Zwanghaftes Nachladen"
     },
     desc = {
-      English = "TODO"
+      en = "Where is my ammo?",
+      de = "Wo ist meine Munition?"
     }
   }
 end

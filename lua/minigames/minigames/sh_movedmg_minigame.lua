@@ -28,10 +28,12 @@ end
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Run'n Gun"
+      en = "Run'n Gun",
+      de = "Laufen & Schießen"
     },
     desc = {
-      English = "More speed = more damage"
+      en = "More speed = more damage",
+      de = "Mehr Geschwindikeit = Mehr Schaden"
     }
   }
 end

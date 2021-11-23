@@ -8,10 +8,12 @@ MINIGAME.contact = "Sirzento | Nico on TTT2 Discord"
 if CLIENT then
     MINIGAME.lang = {
         name = {
-            English = "Mirror World: Step"
+            en = "Mirror World: Step",
+            de = "Gespiegelte Welt: Laufen"
         },
         desc = {
-            English = "Am I drunk?"
+            en = "Am I drunk?",
+            de = "Bin ich Betrunken?"
         }
     }
 end

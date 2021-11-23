@@ -20,10 +20,12 @@ end
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Heavy Weapons"
+      en = "Heavy Weapons",
+      de = "Schwere Waffen"
     },
     desc = {
-      English = "Those weapons have quite the impact"
+      en = "Those weapons have quite the impact",
+      de = "Diese Waffen haben eine große Schlagkraft"
     }
   }
 end

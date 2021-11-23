@@ -8,10 +8,12 @@ MINIGAME.contact = "Sirzento | Nico on TTT2 Discord"
 if CLIENT then
 MINIGAME.lang = {
     name = {
-    English = "To the last bullet..."
+        en = "To the last bullet...",
+        de = "Bis zur letzten Patrone..."
     },
     desc = {
-    English = "Bullets cost money to, you know."
+        en = "Bullets cost money, after all",
+        de = "Patronen kosten nun mal Geld"
     }
 }
 end

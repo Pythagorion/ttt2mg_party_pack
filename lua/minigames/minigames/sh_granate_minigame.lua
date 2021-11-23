@@ -20,10 +20,12 @@ function MINIGAME:AddToSettingsMenu(parent)
 if CLIENT then
     MINIGAME.lang = {
         name = {
-            English = "GRANATE!"
+            en = "GRANATE!",
+            de = "GRANATE!"
         },
         desc = {
-            English = "I can't speak german but I think that doesn't mean anything good.."
+            en = "I can't speak german but I think that doesn't mean anything good...",
+            de = "Das hat mein Opa auch immer gerufen..."
         }
     }
 end

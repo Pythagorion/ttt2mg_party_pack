@@ -33,10 +33,12 @@ end)
 if CLIENT then
     MINIGAME.lang = {
         name = {
-            English = "First panic, then pain"
+            en = "First panic, then pain",
+            de = "Erst Panik, dann Schmerz"
         },
         desc = {
-            English = "I didn't even felt the pain until later"
+            en = "I didn't even felt the pain until later",
+            de = "Ich habe den Schmerz erst später gespürt."
         }
     }
 end
