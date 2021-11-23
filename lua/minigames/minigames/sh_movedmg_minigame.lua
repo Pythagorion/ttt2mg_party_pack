@@ -5,22 +5,25 @@ end
 MINIGAME.author = "Sirzento"
 MINIGAME.contact = "Sirzento | Nico on TTT2 Discord"
 
-MINIGAME.conVarData = {
-  ttt2_minigames_moveDamage_maxDmgAt = {
-    slider = true,
-    min = 200,
-    max = 5000,
-    decimal = 0,
-    desc = "ttt2_minigames_moveDamage_max (Def. 1000)" // TODO
-  },
-  ttt2_minigames_moveDamage_fullDmgAt = {
-    slider = true,
+function MINIGAME:AddToSettingsMenu(parent)
+  local form = vgui.CreateTTT2Form(parent, "header_minigames_extra_settings")
+
+  form:MakeSlider({
+      serverConvar = "ttt2_minigames_moveDamage_maxDmgAt",
+      label = "label_minigames_moveDamage_maxDmgAt",
+      min = 200,
+      max = 5000,
+      decimal = 0
+  })
+
+  form:MakeSlider({
+    serverConvar = "ttt2_minigames_moveDamage_fullDmgAt",
+    label = "label_minigames_moveDamage_fullDmgAt",
     min = 100,
     max = 500,
-    decimal = 0,
-    desc = "ttt2_minigames_moveDamage_fullDmgAt (Def. 220)" // TODO
-  }
-}
+    decimal = 0
+})
+end
 
 if CLIENT then
   MINIGAME.lang = {

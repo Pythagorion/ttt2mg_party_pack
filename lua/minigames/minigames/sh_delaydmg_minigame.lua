@@ -5,15 +5,17 @@ end
 MINIGAME.author = "Sirzento"
 MINIGAME.contact = "Sirzento | Nico on TTT2 Discord"
 
-MINIGAME.conVarData = {
-    ttt2_minigames_delaydmg_delay = {
-        slider = true,
+function MINIGAME:AddToSettingsMenu(parent)
+    local form = vgui.CreateTTT2Form(parent, "header_minigames_extra_settings")
+
+    form:MakeSlider({
+        serverConvar = "ttt2_minigames_delaydmg_delay",
+        label = "label_minigames_delaydmg_delay",
         min = 1,
         max = 30,
-        decimal = 0,
-        desc = "ttt2_minigames_delaydmg_delay (Def. 10)"
-    }
-}
+        decimal = 0
+    })
+end
 
 hook.Add("Initialize", "AddDelayAmmo", function()
   game.AddAmmoType( {
@@ -49,20 +51,17 @@ if SERVER then
       hook.Add("PlayerTakeDamage", "MinigameDelayDmg", function(ent, infl, att, amount, dmginfo)
         if not ent:IsPlayer() then return end
         
-        print(game.GetAmmoID("delay_ammo"))
-        print(dmginfo:GetAmmoType())
         if game.GetAmmoID("delay_ammo") ~= dmginfo:GetAmmoType() then
-            print("start timer")
             dmginfo:SetDamage(0)
             local SteamID = ent:SteamID64()
             local SteamIDAtck = att:SteamID64()
+            local originalAmmoType = dmginfo:GetAmmoType()
             local id = "ttt2_minigames_delaydmg_" .. SteamID .. tostring(CurTime())
             timer.Create(id, ttt2_minigames_delaydmg_delay:GetInt(), 1, function()
                 local p = player.GetBySteamID64(SteamIDAtck)
                 dmginfo:SetDamage(amount)
                 dmginfo:SetAttacker(p)
                 dmginfo:SetAmmoType(game.GetAmmoID("delay_ammo"))
-                print("Damaging player...")
                 ent:TakeDamageInfo(dmginfo)
             end)
             timers[id] = true
