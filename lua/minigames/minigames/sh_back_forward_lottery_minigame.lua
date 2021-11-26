@@ -46,13 +46,7 @@ else -- SERVER
             end
         end
 
-        local next_tick = 0
-
-        hook.Add("Think", "ttt2_mg_new_tick", function()
-            if CurTime() < next_tick then return end
-
-            next_tick = CurTime() + ttt2_minigames_lottery_intervall:GetInt()
-
+        timer.Create("ttt2_mg_new_tick", ttt2_minigames_lottery_intervall:GetInt(), 0, function()
             net.Start("ttt2_mg_lottery_go")
             net.Broadcast()
 
@@ -105,7 +99,7 @@ else -- SERVER
     end
 
     function MINIGAME:OnDeactivation()
-        hook.Remove("Think", "ttt2_mg_new_tick")
+        timer.Remove("ttt2_mg_new_tick")
         local plys = player.GetAll()
         for i=1, #plys do
             plys[i]:ConCommand("-forward")
