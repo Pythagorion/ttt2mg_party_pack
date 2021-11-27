@@ -15,8 +15,8 @@ MINIGAME.conVarData = {
 if CLIENT then 
     MINIGAME.lang = {
 		name = {
-			en = "It's not what it sounds like...",
-			de = "Es ist nicht das, wonach es sich anhört..."
+			en = "It's not what it should sound like...",
+			de = "Es ist nicht das, wonach es sich anhören sollte..."
 		},
 		desc = {
 			en = "The brand new weapon collection now has a sound-(on)-board.",
@@ -31,9 +31,9 @@ else -- SERVER
         local sound
 
         if ttt2_minigames_sound_on_second_ger_memes then
-            sound = ( "sos_minigame/german_memes/meme" .. math.random( 1, 49 ) .. ".mp3" )
+            sound = ( "sos_minigame/german_memes/meme" .. math.random( 1, 70 ) .. ".mp3" )
         else
-            sound = ( "sos_minigame/only_international/meme" .. math.random( 1, 14 ) .. ".mp3" )
+            sound = ( "sos_minigame/only_international/meme" .. math.random( 1, 16 ) .. ".mp3" )
         end
 
         return sound
